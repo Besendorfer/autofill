@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "AWS Console Autofill",
+  "version": "1.0.0",
+  "description": "Autofill confirmation text fields in AWS Console (e.g., S3 delete confirmation)",
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.console.aws.amazon.com/*",
+        "https://*.console.amazonaws.cn/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+
